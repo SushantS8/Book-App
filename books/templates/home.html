@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content%}
+
+    <div class="container">
+        <form class="mx-15 my-20 flex flex-col" action = "" method="POST">
+            <h1>Books Form</h1>
+            {% csrf_token %}
+            <p>
+                Name
+                <input type="text" name="book_name" placeholder="Enter book name .." class="form-input"/>
+            </p>
+            <p>
+                Author
+                <input type="text" name="author_name" placeholder="Enter author name .." class="form-input"/>
+            </p>
+            <p>
+                Date
+                <input type="date" name="published_date" class="form-input"/>
+            </p>
+            <p>
+                Price
+                <input type="number" name="book_price" class="form-input"/>
+            </p>
+            <div class="btn-list">
+                <button type="submit">Submit</button>
+                {% comment %} <form method="get" action="{% url 'books-home' %}">
+                    <button type="submit" name="list-books" value="true" id="list-book-btn">List</button>
+                </form> {% endcomment %}
+                <a href="{% url 'book_list' %}">
+                    <button type="button" id="list-book-btn">View</button>
+                </a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

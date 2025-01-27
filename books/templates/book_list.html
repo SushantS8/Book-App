@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content%}
+    <div class="table-list">
+        <h1>Books Data List</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Book Name</th>
+                    <th>Author Name</th>
+                    <th>Published Date</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}  
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{book.book_name}}</td>
+                    <td>{{book.author_name}}</td>
+                    <td>{{book.publish_date}}</td>
+                    <td>${{book.book_price}}</td>
+                    <td id="btn-space">
+                        <a href="{% url 'delete_book' id=book.id %}">
+                            <button type="submit" id="delete-book-btn">Delete</button>
+                        </a>
+                        <a href="{% url 'update_book' id=book.id %}">
+                            <button type="submit" id="update-book-btn">Update</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>  
+    </div>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content%}
+
+    <div class="container">
+        <form class="mx-15 my-20 flex flex-col" action = "" method="POST">
+            <h1>Update Book Form</h1>
+            {% csrf_token %}
+            <p>
+                Name
+                <input type="text" name="book_name" value="{{ book.book_name }}" placeholder="Enter book name .." class="form-input"/>
+            </p>
+            <p>
+                Author
+                <input type="text" name="author_name" value="{{ book.author_name }}" placeholder="Enter author name .." class="form-input"/>
+            </p>
+            <p>
+                Date
+                <input type="date" name="published_date" value="{{book.publish_date|date:'Y-m-d'}}" class="form-input"/>
+            </p>
+            <p>
+                Price
+                <input type="number" name="book_price"  value="{{ book.book_price }}" class="form-input"/>
+            </p>
+            <div class="btn-list">
+                <a href="{% url 'book_list' %}">
+                    <button type="submit" id="update-btn">Update</button>
+                </a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
