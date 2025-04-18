@@ -13,10 +13,41 @@
 
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">   
+
     </head>
     <body>
+        <header class="site-header">
+          <nav class="navbar">
+             <div class="navbar-nav">
+              <a class="nav-item nav-link" href="{% url 'books-home' %}">Home</a>
+              <a class="nav-item nav-link" href="{% url 'books-about' %}">About</a>
+             </div>
+             <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              {% if user.is_authenticated %}
+                <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                <form method="POST" action="{% url 'logout' %}" style="display: inline;">
+                  {% csrf_token %}
+                  <button type="submit" style="margin-top: 2rem;">Logout</button>
+                </form>
+              {% else %}
+                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+              {% endif %}
+            </div>
+          </nav>
+        </header>
+        {% if messages %}
+          {% for message in messages%}
+              <div class="alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+          {% endfor%}
+        {% endif %}
         {% block content%} {% endblock %}
-        <script src="" async defer></script>
+        
+        <script src="https://cdn.tailwindcss.com"></script>
+
     </body>
 </html>

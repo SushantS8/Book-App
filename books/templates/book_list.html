@@ -19,7 +19,7 @@
                     <td>{{forloop.counter}}</td>
                     <td>{{book.book_name}}</td>
                     <td>{{book.author_name}}</td>
-                    <td>{{book.publish_date}}</td>
+                    <td>{{book.publish_date|date:"Y-m-d"}}</td>
                     <td>${{book.book_price}}</td>
                     <td id="btn-space">
                         <a href="{% url 'delete_book' id=book.id %}">
