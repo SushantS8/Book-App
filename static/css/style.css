@@ -1,19 +1,40 @@
-/* body {
-    margin: 0;
-    border: 0;
-    /* background-color: black; */
-    /* color: white;
-    margin: 2rem 10rem; 
-} */ 
-
 body {
-    background-color: #C191A1;
+    margin: 0;
+    padding: 0;
+    background-color: #3E5C76;
+    color: #F0EBD8;
 }
 
-.container {
-    /* display: flex;
+.site-header {
+    background-color: #1D2D44;
+    height: 4rem;
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+ }
+ 
+ .navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    max-width: 100%;  
+    gap: 5rem;
+ }
+ 
+ .navbar-nav {
+    display: flex;
     justify-content: center;
-    align-items: center; */
+    align-items: center;
+    gap: 1rem;  /* Optional: adds consistent spacing between nav items */
+ }
+
+.navbar a {
+    color: #F0EBD8;
+    text-decoration: none;
+}
+
+/* .container {
     height: 32rem;
     width: 30rem;
     margin-left: 30rem;
@@ -21,8 +42,22 @@ body {
     border: none;
     border-radius: 1rem;
     font-size: 1.0rem;
-    background-color: #EABFCB;
+    background-color: #748CAB;
     font-weight: 200;
+    color: #F0EBD8;
+} */
+
+.login-container {
+    height: 20rem;
+    width: 30rem;
+    margin-left: 30rem;
+    margin-top: 10rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.0rem;
+    background-color: #748CAB;
+    font-weight: 200;
+    color: #F0EBD8;
 }
 
 form {
@@ -30,7 +65,6 @@ form {
 }
 
 form h1 {
-  /* margin-left: 10rem; */
   text-align: center;
 }
 
@@ -51,6 +85,13 @@ form p {
     border-radius: 0.2rem;
 }
 
+#login-btn {
+    width: 100%;
+    height: 1.5rem;
+    border: none;
+    border-radius: 0.2rem;
+}
+
 .btn-list {
     display: flex;
     align-items: center;
@@ -58,18 +99,18 @@ form p {
     margin-left: 8rem;
 }
 
-form button, #delete-book-btn, #update-book-btn{
+/* #delete-book-btn, #update-book-btn{
     height: 2rem;
     width: 5rem;
     /* margin-left: 6rem; */
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem;
     border: none;
     border-radius: 0.5rem;
     font-size: 1rem;
     background-color: green;
     color: #fff;
     font-weight: 550;
-}
+} */ 
 
 #list-book-btn {
     background-color: blue;
@@ -95,6 +136,7 @@ form button, #delete-book-btn, #update-book-btn{
     color: white;
 }
 
+
 form button, #delete-book-btn, #update-book-btn:hover {
     cursor: pointer;
 }
@@ -115,4 +157,12 @@ form button, #delete-book-btn, #update-book-btn:hover {
 
 th, td {
     padding: 1rem;
+}
+
+small {
+    color: white;
+}
+
+small a {
+    color: white;
 }

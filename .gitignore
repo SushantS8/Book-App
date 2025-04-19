@@ -1,2 +1,19 @@
+# Virtual Environment
 env/
-db.sqlite3/
+
+# SQLite DB file
+db.sqlite3
+
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# macOS system file
+.DS_Store
+
+Dockerfile
+docker-compose.yml
+requirements.txt
